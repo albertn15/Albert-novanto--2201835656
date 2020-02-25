@@ -1,0 +1,21 @@
+#code ke 1
+import pandas as ps
+
+source = 'listings.csv'
+Data = ps.read_csv(source)
+
+#code ke 2
+for col in Data.columns:
+      print(col, Data.col.max())
+
+#code ke 3
+for col in Data.columns:
+      print(col, Data.col.min())
+
+#code ke 4
+T = Data.copy()
+NCol = [col for col in Data.columns
+                  if Data.col.isnull().any()]
+T.drop(NCol, axis=1)
+
+Data.fillna(Data.mean())
